@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from os.path import abspath, dirname
+# django-pydenticon 오류 방지
+import collections
+
+if not hasattr(collections, 'Callable'):
+		collections.Callable = collections.abc.Callable
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     # Third apps
     'debug_toolbar',
     "django_bootstrap5",
+    'django_pydenticon',
     # local apps
     'accounts',
 ]
